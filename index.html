@@ -59,11 +59,6 @@
             display: none;
             margin-top: 20px;
         }
-
-        /* Hide the entire page content */
-        .hidden-content {
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -148,7 +143,6 @@
                 // Reset failed attempts if more than 60 minutes have passed
                 failedAttempts = 0;
                 document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown
-                document.querySelector(".hidden-content").style.display = "block"; // Show the hidden content
             }
 
             if (enteredPasscode === validPasscode) {
@@ -156,7 +150,6 @@
                 document.querySelector(".link-container").style.display = "flex";
                 document.querySelector(".passcode-container").style.display = "none"; // Hide the passcode input
                 document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown
-                document.querySelector(".hidden-content").style.display = "block"; // Show the hidden content
             } else {
                 // Passcode is incorrect, show an alert or do something else
                 alert("Incorrect passcode. Please try again.");
@@ -196,7 +189,6 @@
                 updateCountdown();
                 if (failedAttempts >= 5) {
                     document.querySelector(".countdown-container").style.display = "block";
-                    document.querySelector(".hidden-content").style.display = "none";
                 }
             }
         }
