@@ -179,6 +179,19 @@
 
         // Initial update of countdown timer
         updateCountdown();
+        
+        // Check local storage for remaining time
+        const storedRemainingTime = localStorage.getItem("remainingTime");
+        if (storedRemainingTime) {
+            const parsedRemainingTime = parseInt(storedRemainingTime);
+            if (parsedRemainingTime > 0) {
+                lastAttemptTime = new Date().getTime() - (1 * 60 * 1000 - parsedRemainingTime);
+                updateCountdown();
+                if (failedAttempts >= 5) {
+                    document.querySelector(".countdown-container").style.display = "block";
+                }
+            }
+        }
     </script>
 </body>
 </html>
