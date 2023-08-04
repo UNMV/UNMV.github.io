@@ -132,9 +132,6 @@
             const minutes = Math.floor(remainingTime / (60 * 1000));
             const seconds = Math.floor((remainingTime % (60 * 1000)) / 1000);
             countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            
-            // Store remaining time in local storage
-            localStorage.setItem("remainingTime", remainingTime);
         }
 
         // Function to check the entered passcode
