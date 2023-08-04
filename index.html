@@ -53,6 +53,12 @@
         .passcode-container {
             margin-top: 20px;
         }
+
+        /* Add a container for the countdown timer */
+        .countdown-container {
+            display: none;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +76,11 @@
         <div class="passcode-container">
             <input type="password" id="passcode" placeholder="Enter Passcode">
             <button class="button" onclick="checkPasscode()">Submit</button>
+        </div>
+
+        <!-- Countdown timer for lockout -->
+        <div class="countdown-container">
+            <p>Too many failed attempts. Please wait for <span id="countdown">60:00</span> minutes.</p>
         </div>
 
         <!-- Links in a row with three links per row -->
@@ -107,20 +118,37 @@
 
     <script>
         // Passcode for authentication
-        const validPasscode = "yourpasscode"; // Replace with your actual passcode
+        const validPasscode = "MVUNBLOCKEDRULES12!"; // Replace with your actual passcode
+
+        // Variables to track failed attempts and timestamp
+        let failedAttempts = 0;
+        let lastAttemptTime = 0;
+
+        // Function to update the countdown timer
+        function updateCountdown() {
+            const countdownElement = document.getElementById("countdown");
+            const currentTime = new Date().getTime();
+            const remainingTime = Math.max(0, (60 * 60 * 1000 - (currentTime - lastAttemptTime)));
+            const minutes = Math.floor(remainingTime / (60 * 1000));
+            const seconds = Math.floor((remainingTime % (60 * 1000)) / 1000);
+            countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
 
         // Function to check the entered passcode
         function checkPasscode() {
             const enteredPasscode = document.getElementById("passcode").value;
+            const currentTime = new Date().getTime();
+
+            if (currentTime - lastAttemptTime > 60 * 60 * 1000) {
+                // Reset failed attempts if more than 60 minutes have passed
+                failedAttempts = 0;
+                document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown
+            }
+
             if (enteredPasscode === validPasscode) {
                 // Passcode is correct, show the links
                 document.querySelector(".link-container").style.display = "flex";
                 document.querySelector(".passcode-container").style.display = "none"; // Hide the passcode input
+                document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown
             } else {
-                // Passcode is incorrect, show an alert or do something else
-                alert("Incorrect passcode. Please try again.");
-            }
-        }
-    </script>
-</body>
-</html>
+                // Passcode
