@@ -118,7 +118,7 @@
 
     <script>
         // Passcode for authentication
-        const validPasscode = "MVUNBLOCKEDRULES12!"; // Replace with your actual passcode
+        const validPasscode = "yourpasscode"; // Replace with your actual passcode
 
         // Variables to track failed attempts and timestamp
         let failedAttempts = 0;
@@ -151,4 +151,31 @@
                 document.querySelector(".passcode-container").style.display = "none"; // Hide the passcode input
                 document.querySelector(".countdown-container").style.display = "none"; // Hide the countdown
             } else {
-                // Passcode
+                // Passcode is incorrect, show an alert or do something else
+                alert("Incorrect passcode. Please try again.");
+
+                failedAttempts++;
+                lastAttemptTime = currentTime;
+
+                if (failedAttempts >= 5) {
+                    // Display the countdown timer
+                    document.querySelector(".countdown-container").style.display = "block";
+                    // Start updating the countdown timer
+                    updateCountdown();
+                    // Disable the passcode input and submit button
+                    document.getElementById("passcode").disabled = true;
+                    document.querySelector(".button").disabled = true;
+
+                    // Update countdown every second
+                    const countdownInterval = setInterval(function () {
+                        updateCountdown();
+                        if (failedAttempts >= 5) {
+                            clearInterval(countdownInterval);
+                        }
+                    }, 1000);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
