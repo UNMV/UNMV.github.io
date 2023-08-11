@@ -1,4 +1,18 @@
-<script src="/ruffle/ruffle.js"></script>
-<div class="swf"dir="ltr" style="text-align: left;" trbidi="on">
-        <embed height="480" pluginspage=" http://www.macromedia.com/go/getflashplayer" src="/gameassets/bloons.swf" type="application/x-shockwave-flash" width="620"></embed>
-</div>
+<script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+        "autoplay": "on","splashScreen": false,"unmuteOverlay": "hidden"
+    };
+    
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container");
+            container.appendChild(player);
+            player.load("/gameassets/bloons.swf");
+            player.style.width = "700px";
+            player.style.height = "400px";
+        });
+    </script>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <div id="container"></div>
