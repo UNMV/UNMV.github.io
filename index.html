@@ -126,7 +126,7 @@
         <p>I will add games on a weekly base. I am currently working on a google form to </p>
         <p>accept requests for games. The link will go under here.</p>
         <div class="link-item">
-            <h5><a href="https://docs.google.com/forms/d/e/1FAIpQLScdLlXQv6B0bYVLJ4Ax24ty4c06iGoRsa3RAJKDNACbBgkhqQ/viewform" class="button"></a></h5>
+            <h5><a href="https://docs.google.com/forms/d/e/1FAIpQLScdLlXQv6B0bYVLJ4Ax24ty4c06iGoRsa3RAJKDNACbBgkhqQ/viewform" class="button">The Form</a></h5>
         </div>
         <h1>bruh why is there a password</h6>
         <p>To prevent the little scoundrels at the jh staff team from blocking this.</p>
@@ -149,7 +149,8 @@
             const remainingTime = Math.max(0, (1 * 60 * 1000 - (currentTime - lastAttemptTime)));
             const minutes = Math.floor(remainingTime / (60 * 1000));
             const seconds = Math.floor((remainingTime % (60 * 1000)) / 1000);
-            countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`; 
+            
         }
 
         // Function to check the entered passcode
