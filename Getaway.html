@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <link rel="icon" type="image/x-icon" href="img/images.jpg" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,27 +9,27 @@
     <script src="Build/UnityLoader.js"></script>
     <script src="/js/main.js"></script>
     <style>
-      body {
-        background-color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-      #gameContainer {
-        width: 600px; /* Set the width to 600px */
-        height: 800px; /* Set the height to 800px */
-        position: relative;
-      }
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #gameContainer {
+            width: 600px;
+            height: 800px;
+            position: relative;
+        }
     </style>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "GetawayShootout.json", { width: "100%", height: "100%" });
+        var gameInstance = UnityLoader.instantiate("gameContainer", "GetawayShootout.json", { width: 600, height: 800 });
     </script>
-  </head>
-  <body>
+</head>
+<body>
     <center>
-      <div id="gameContainer"></div>
+        <div id="gameContainer"></div>
     </center>
-  </body>
+</body>
 </html>
