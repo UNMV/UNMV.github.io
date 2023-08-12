@@ -14,6 +14,7 @@
             background-size: cover; /* Adjust this value to control the size of the background image */
             background-position: center;
             color: white; /* Set the default text color to white */
+            margin: 0; /* Remove default margin to extend background to edges */
         }
         h1, h4, h5, h6 {
             color: white; /* Set the text color for headings to white */
@@ -59,79 +60,115 @@
             display: none;
             margin-top: 20px;
         }
+
+        /* Hide the entire page content */
+        .hidden-content {
+            display: none;
+        }
+
+        /* Style for the navigation bar */
+        .nav-bar {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Style for the search bar */
+        .search-bar {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
+    <div class="nav-bar">
+        <div>
+            <h4><a href="#" class="button">Home</a></h4>
+            <h4><a href="#" class="button">Games</a></h4>
+            <h4><a href="#" class="button">FAQ</a></h4>
+            <h4><a href="#" class="button">Changelog</a></h4>
+            <h4><a href="#" class="button">Settings</a></h4>
+        </div>
+        <div>
+            <input type="text" class="search-bar" placeholder="Search...">
+        </div>
+    </div>
+
     <center>
-        <h1>
-            MVUNBLOCKED
-        </h1><br><br>
-        <img src="/image-removebg-preview (56).png" alt="the title">
-        <h1>For all of your Mount Vernon needs</h1><br><br>
-        <h6>
-            Games:
-        </h6>
-        <br><br>
-        <!-- Passcode input -->
-        <div class="passcode-container">
-            <input type="password" id="passcode" placeholder="Enter Passcode">
-            <button class="button" onclick="checkPasscode()">Submit</button>
-        </div>
+        <div class="hidden-content">
+            <h1>
+                MVUNBLOCKED
+            </h1><br><br>
+            <img src="/image-removebg-preview (56).png" alt="the title">
+            <h1>For all of your Mount Vernon needs</h1><br><br>
+            <h6>
+                Games:
+            </h6>
+            <br><br>
+            <!-- Passcode input -->
+            <div class="passcode-container">
+                <input type="password" id="passcode" placeholder="Enter Passcode">
+                <button class="button" onclick="checkPasscode()">Submit</button>
+            </div>
 
-        <!-- Countdown timer for lockout -->
-        <div class="countdown-container">
-            <p>Too many failed attempts. Please wait for <span id="countdown">60:00</span> minutes.</p>
-        </div>
+            <!-- Countdown timer for lockout -->
+            <div class="countdown-container">
+                <p>Too many failed attempts. Please wait for <span id="countdown">60:00</span> minutes.</p>
+            </div>
 
-        <!-- Links in a row with three links per row -->
-        <div class="link-container">
-            <div class="link-item">
-                <h5><a href="/gameassets/MVCraft.html" class="button">MVCraft 1.5.2</a></h4>
+            <!-- Links in a row with three links per row -->
+            <div class="link-container">
+                <div class="link-item">
+                    <h5><a href="/gameassets/MVCraft.html" class="button">MVCraft 1.5.2</a></h4>
+                </div>
+                <div class="link-item">
+                    <h5><a href="/gameassets/MVBETA.html" class="button">MVCraft Beta 3</a></h5>
+                </div>
+                <div class="link-item">
+                    <h5><a href="/gameassets/MVCraft Multiplayer.html" class="button">MVCraft Multiplayer</a></h5>
+                </div>
+                <div class="link-item">
+                    <h5><a href="/gameassets/1v1.LOL/1v1lolhtml.html" class="button">1v1.LOL</a></h4>
+                </div>
+                <div class="link-item">
+                    <h5><a href="/Music and Such/Secret.html" class="button">Test (coding project)</a></h5>
+                </div>
+                <div class="link-item">
+                    <h5><a href="/Getaway.html" class="button">Getaway Shootout</a></h5>
+                </div>
+                <div class="link-item">
+                    <h5><a href="/Rooftop.html" class="button">Rooftop Snipers</a></h5>
+                </div>
+                <div class="link-item">
+                    <h5><a href="/gameassets/Shell/sHELL.html" class="button">Proxy</a></h5>
+                </div>
+                <div class="link-item">
+                    <h5><a href="/start.html" class="button">SM64-JS</a></h5>
+                </div>
+                <div class="link-item">
+                    <h5><a href="gameassets/Test.html" class="button">A Dark Room</a></h5>
+                </div>
+                <div class="link-item">
+                    <h5><a href="/games/tunnel-rush/index.html" class="button">Link ?</a></h5>
+                </div>
+                <!-- Add more links here to complete the rows -->
             </div>
+            <h1>IMPORTANT INFO</h6>
+            <p>If this website ever gets blocked, the new website url will be IXL.github.io</p>
+            <h1>ADDING GAMES</h6>
+            <p>I will add games on a weekly base. I am currently working on a google form to </p>
+            <p>accept requests for games. The link will go under here.</p>
             <div class="link-item">
-                <h5><a href="/gameassets/MVBETA.html" class="button">MVCraft Beta 3</a></h5>
+                <h5><a href="https://docs.google.com/forms/d/e/1FAIpQLScdLlXQv6B0bYVLJ4Ax24ty4c06iGoRsa3RAJKDNACbBgkhqQ/viewform" class="button">The Form</a></h5>
             </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/MVCraft Multiplayer.html" class="button">MVCraft Multiplayer</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/1v1.LOL/1v1lolhtml.html" class="button">1v1.LOL</a></h4>
-            </div>
-            <div class="link-item">
-                <h5><a href="/Music and Such/Secret.html" class="button">Test (coding project)</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/Getaway.html" class="button">Getaway Shootout</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/Rooftop.html" class="button">Rooftop Snipers</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/Shell/sHELL.html" class="button">Proxy</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/start.html" class="button">SM64-JS</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="gameassets/Test.html" class="button">A Dark Room</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/games/tunnel-rush/index.html" class="button">Link ?</a></h5>
-            </div>
-            <!-- Add more links here to complete the rows -->
+            <h1>bruh why is there a password</h6>
+            <p>To prevent the little scoundrels at the jh staff team from blocking this.</p>
+            <p>i might remove it idrk</p>
+            <p> if you've read this far the password is MV</p>
         </div>
-        <h1>IMPORTANT INFO</h6>
-        <p>If this website ever gets blocked, the new website url will be IXL.github.io</p>
-        <h1>ADDING GAMES</h6>
-        <p>I will add games on a weekly base. I am currently working on a google form to </p>
-        <p>accept requests for games. The link will go under here.</p>
-        <div class="link-item">
-            <h5><a href="https://docs.google.com/forms/d/e/1FAIpQLScdLlXQv6B0bYVLJ4Ax24ty4c06iGoRsa3RAJKDNACbBgkhqQ/viewform" class="button">The Form</a></h5>
-        </div>
-        <h1>bruh why is there a password</h6>
-        <p>To prevent the little scoundrels at the jh staff team from blocking this.</p>
-        <p>i might remove it idrk</p>
-        <p> if you've read this far the password is MV</p>
     </center>
 
     <script>
