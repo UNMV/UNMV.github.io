@@ -1,27 +1,11 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <div id="container"> </div>
 
-<script src="/ruffle.js"></script>
-    <script>
-        window.RufflePlayer = window.RufflePlayer || {};
-        window.addEventListener("load", (event) => {
-            const ruffle = window.RufflePlayer.newest();
-            const player = ruffle.createPlayer();
-            const container = document.getElementById("container"); 
-            container.appendChild(player);
-            player.load({
-                url: "/gameassets/bloons.swf", 
-                backgroundColor: "#000", 
-             });
-            player.style.width = "450px"; 
-            player.style.height = "450px";
-        });
-    </script>
-    </style>
-</head>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
 <body>
-   
-</body>
+
+<embed src="/gameassets/bloons.swf" width="500" height="500"></embed>
+
+<body>
+
 </html>
