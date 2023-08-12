@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ruffle Test</title>
-    <script src="/gameassets/ruffle.js"></script>
-    <style>
-        /* Your styles here */
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
+    <div id="container"> </div>
+
+<script src="/gameassets/ruffle.js"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container"); 
+            container.appendChild(player);
+            player.load({
+                url: "/gameassets/bloons.swf", 
+                backgroundColor: "#000", 
+             });
+            player.style.width = "450px"; 
+            player.style.height = "450px";
+        });
+    </script>
     </style>
 </head>
 <body>
-    <ruffle-player
-        id="ruffle-player"
-        src="/gameassets/bloons.swf"
-        width="640"
-        height="480"
-    ></ruffle-player>
+   
 </body>
 </html>
