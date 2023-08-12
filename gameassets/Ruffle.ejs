@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ruffle SWF Player</title>
+    <!-- Include the Ruffle player library -->
+    <script src="/ruffle.js"></script>
+    <!-- Include your custom JavaScript if needed -->
+    <script>
+        // Your custom JavaScript code
+    </script>
+</head>
+<body>
+    <h1>Ruffle SWF Player Example</h1>
+    <noscript>
+        <p>This content requires JavaScript to be enabled and the Ruffle player to be installed.</p>
+    </noscript>
+    <div id="swf-container">
+        <p>Loading SWF content...</p>
+    </div>
+
+    <script>
+        // Initialize the Ruffle player
+        const rufflePlayer = new RufflePlayer();
+        const swfContainer = document.getElementById('swf-container');
+        rufflePlayer.load({ swf: '/gameassets/bloons.swf', container: swfContainer });
+    </script>
+</body>
+</html>
