@@ -3,27 +3,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getaway Shootout</title>
-    <link rel="icon" type="image/x-icon" href="img/images.jpg">
+    <title>MVUnblocked</title>
+    <link rel="icon" type="image/x-icon" href="/image-removebg-preview (56).png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <style>
+        /* Your existing CSS styles */
+
         body {
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: "Poppins", cursive, sans-serif;
-            background-image: url("/desktop-wallpaper-zoom-background-nomad®-dark-website.png"); /* Replace with your background image path */
+            font-family: "Poppins", sans-serif;
+            background-image: url("/desktop-wallpaper-zoom-background-nomad®-dark-website.png");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
+            color: rgb(201, 85, 101);
         }
 
-        h1, h4, a, h5, h6 {
-            color: white;
-            font-family: "Poppins", cursive, sans-serif;
+        h1, h4, h5, h6 {
+            color: rgb(201, 85, 101);
         }
 
         .button {
@@ -37,23 +33,104 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         .button:hover {
             background-color: rgb(185, 182, 182);
         }
 
-        #gameContainer {
-            width: 600px;
-            height: 600px;
-            position: relative;
+        .link-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
+        
+
+        .link-item {
+            flex: 0 0 calc(25% - 20px);
+            margin: 10px;
+        }
+
+        .passcode-container {
+            margin-top: 20px;
+        }
+
+        .countdown-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* New styles for the navigation toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .logo {
+            width: 30px;
+            height: auto;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+        }
+        .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.centered-text {
+    background-color: none;
+    padding: 10px;
+    border-radius: 4px;
+    display: block;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.centered-text h1 {
+    margin: 0;
+    font-size: 110px;
+    font-weight: bolder;
+}
+.centered-text h2 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+
+
     </style>
-    <script src="Build/UnityLoader.js"></script>
-    <script src="/js/main.js"></script>
-    <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "GetawayShootout.json", { width: 600, height: 600 });
-    </script>
 </head>
 <body>
+    <div class="toolbar">
+        <img class="logo" src="/image-removebg-preview (56).png" alt="Logo">
+        <ul class="nav-links">
+            <li><a class="nav-link" href="/">Home</a></li>
+            <li><a class="nav-link" href="/games">Games</a></li>
+            <li><a class="nav-link" href="/domain.html">Domains</a></li>
+            <li><a class="nav-link" href="/faq">FAQ</a></li>
+            <li><a class="nav-link" href="/changelog">Changelog</a></li>
+            <li><a class="nav-link" href="/settings">Settings</a></li>
+        </ul>
+    </div>
+    
     <center>
       <h1>Getaway Shootout</h1>
       <h1>Shoot and Get off my lawn!</h1>
