@@ -18,7 +18,7 @@
         }
 
         h1, h4, h5, h6 {
-            color: white;
+            color: rgb(201, 85, 101);
         }
 
         .button {
@@ -84,6 +84,35 @@
             color: white;
             text-decoration: none;
         }
+        .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.centered-text {
+    background-color: none;
+    padding: 10px;
+    border-radius: 4px;
+    display: block;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.centered-text h1 {
+    margin: 0;
+    font-size: 110px;
+    font-weight: bolder;
+}
+.centered-text h2 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+
     </style>
 </head>
 <body>
@@ -100,11 +129,15 @@
     </div>
     
     <center>
+        <div class="header-container">
+            <div class="centered-text">
         <h1>
             MVUNBLOCKED
         </h1>
         <img src="/image-removebg-preview (56).png" alt="the title">
         <h1>For all of your Mount Vernon needs</h1>
+        </div>
+    </div>
         <h6>
             Games:
         </h6>
