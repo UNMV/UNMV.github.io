@@ -146,27 +146,34 @@
         <button id="toggleButton">Show Text</button>
         <p id="hiddenText" style="display: none;">This is the hidden text that will be shown when the button is clicked.</p>
     </div>
-            <!-- Add more links here to complete the rows -->
-        </div>
         
     </center>
 
     <script>
         const toggleButton = document.getElementById("toggleButton");
-const hiddenText = document.getElementById("hiddenText");
-const content = document.getElementById("content");
-
-toggleButton.addEventListener("click", function() {
-    if (toggleButton.tagName === "BUTTON") {
-        toggleButton.style.display = "none";
-        hiddenText.style.display = "block";
-
-        const textBox = document.createElement("textarea");
-        textBox.setAttribute("id", "textBox");
-        textBox.value = hiddenText.textContent;
-        content.appendChild(textBox);
-    }
-});
-    </script>
-</body>
-</html>
+        const hiddenText = document.getElementById("hiddenText");
+        const content = document.getElementById("content");
+        
+        toggleButton.addEventListener("click", function() {
+            if (toggleButton.textContent === "Show Text") {
+                toggleButton.textContent = "Hide Text";
+                hiddenText.style.display = "block";
+        
+                const textBox = document.createElement("textarea");
+                textBox.setAttribute("id", "textBox");
+                textBox.value = hiddenText.textContent;
+                content.appendChild(textBox);
+            } else {
+                toggleButton.textContent = "Show Text";
+                hiddenText.style.display = "none";
+                const textBox = document.getElementById("textBox");
+                if (textBox) {
+                    textBox.parentNode.removeChild(textBox);
+                }
+            }
+        });
+        </script>
+        
+        </body>
+        </html>
+        
