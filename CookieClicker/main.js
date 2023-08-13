@@ -9012,6 +9012,9 @@ Game.Launch=function()
 				{
 					ctx.drawImage(Pic(img),0,0);
 					var canvasAddon=document.createElement('canvas');
+					var canvas = document.getElementById('backgroundCanvas');
+canvas.width = 800;
+canvas.height = 600;
 					canvasAddon.width=32;
 					canvasAddon.height=32;
 					ctxAddon=canvasAddon.getContext('2d');
