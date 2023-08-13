@@ -138,68 +138,7 @@
         <h2>For all of your Mount Vernon needs</h2>
         </div>
     </div>
-    <img src="/image-removebg-preview (56).png" alt="the title">
-        <h6>
-            Games:
-        </h6>
-        <div class="passcode-container">
-            <input type="password" id="passcode" placeholder="Enter Passcode">
-            <button class="button" onclick="checkPasscode()">Submit</button>
-        </div>
-
-        <div class="countdown-container">
-            <p>Too many failed attempts. Please wait for <span id="countdown">60:00</span> minutes.</p>
-        </div>
-
-        <div class="link-container">
-            <div class="link-item">
-                <h5><a href="/gameassets/MVCraft.html" class="button">MVCraft 1.5.2</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/MVBETA.html" class="button">MVCraft Beta 3</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/MVCraft Multiplayer.html" class="button">MVCraft Multiplayer</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/1v1.LOL/1v1lolhtml.html" class="button">1v1.LOL</a></h4>
-            </div>
-            <div class="link-item">
-                <h5><a href="/Music and Such/Secret.html" class="button">Test (coding project)</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/Getaway.html" class="button">Getaway Shootout</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/Rooftop.html" class="button">Rooftop Snipers</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/Shell/sHELL.html" class="button">Proxy</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/start.html" class="button">SM64-JS</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="gameassets/Test.html" class="button">Rooftop Snipers 2</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/games/tunnel-rush/index.html" class="button">Tunnel Rush</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/Ruffle.html" class="button">Age of War</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/BloonsTD4.html" class="button">Bloons TD 4</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/CookieClicker/index.html" class="button">Cookie Clicker</a></h5>
-            </div>
-            <div class="link-item">
-                <h5><a href="/gameassets/Retrobowl/index.html" class="button">Retrobowl</a></h5>
-            </div>
-            <!-- Add more links here to complete the rows -->
-        </div>
-        
+       
         <h1>IMPORTANT INFO</h6>
         <p>If this website ever gets blocked, the new website url will be IXL.github.io</p>
         <h1>ADDING GAMES</h6>
@@ -213,70 +152,7 @@
         <p>i might remove it idrk</p>
         <p> if you've read this far the password is MV</p>
     </center>
-
     <script>
-        const validPasscode = "MV";
-
-        let failedAttempts = 0;
-        let lastAttemptTime = 0;
-
-        function updateCountdown() {
-            const countdownElement = document.getElementById("countdown");
-            const currentTime = new Date().getTime();
-            const remainingTime = Math.max(0, (1 * 60 * 1000 - (currentTime - lastAttemptTime)));
-            const minutes = Math.floor(remainingTime / (60 * 1000));
-            const seconds = Math.floor((remainingTime % (60 * 1000)) / 1000);
-            countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`; 
-        }
-
-        function checkPasscode() {
-            const enteredPasscode = document.getElementById("passcode").value;
-            const currentTime = new Date().getTime();
-
-            if (currentTime - lastAttemptTime > 1 * 60 * 1000) {
-                failedAttempts = 0;
-                document.querySelector(".countdown-container").style.display = "none";
-            }
-
-            if (enteredPasscode === validPasscode) {
-                document.querySelector(".link-container").style.display = "flex";
-                document.querySelector(".passcode-container").style.display = "none";
-                document.querySelector(".countdown-container").style.display = "none";
-            } else {
-                alert("Incorrect password. Are you a teacher :>?");
-
-                failedAttempts++;
-                lastAttemptTime = currentTime;
-
-                if (failedAttempts >= 5) {
-                    document.querySelector(".countdown-container").style.display = "block";
-                    updateCountdown();
-                    document.getElementById("passcode").disabled = true;
-                    document.querySelector(".button").disabled = true;
-
-                    const countdownInterval = setInterval(function () {
-                        updateCountdown();
-                        if (failedAttempts >= 5) {
-                            clearInterval(countdownInterval);
-                        }
-                    }, 1000);
-                }
-            }
-        }
-
-        updateCountdown();
-
-        const storedRemainingTime = localStorage.getItem("remainingTime");
-        if (storedRemainingTime) {
-            const parsedRemainingTime = parseInt(storedRemainingTime);
-            if (parsedRemainingTime > 0) {
-                lastAttemptTime = new Date().getTime() - (1 * 60 * 1000 - parsedRemainingTime);
-                updateCountdown();
-                if (failedAttempts >= 5) {
-                    document.querySelector(".countdown-container").style.display = "block";
-                }
-            }
-        }
-    </script>
+    </script
 </body>
 </html>
