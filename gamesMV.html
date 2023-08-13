@@ -85,23 +85,30 @@
             color: white;
             text-decoration: none;
         }
-        .centered-text {
-    position: fixed;
-    top: 50%;
+        .header-container {
+    position: absolute;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.centered-text {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
     border-radius: 4px;
-    display: block; /* Always visible */
+    display: block;
     color: white;
+    margin-bottom: 20px;
 }
 
 .centered-text h1 {
     margin: 0;
     font-size: 24px;
 }
+
 
     </style>
 </head>
