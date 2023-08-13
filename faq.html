@@ -141,37 +141,17 @@
         <h2>COME WITH QUESTIONS, GO WITH MORE QUESTIONS</h2>
         </div>
     </div>
-        
-    <div id="content">
-        <button id="toggleButton">Show Text</button>
-        <p id="hiddenText" style="display: none;">This is the hidden text that will be shown when the button is clicked.</p>
-    </div>
-        
+        <h6>HOW DO I SUBMIT GAME REQUESTS</h6>
+        <h5><a href="https://docs.google.com/forms/d/e/1FAIpQLScdLlXQv6B0bYVLJ4Ax24ty4c06iGoRsa3RAJKDNACbBgkhqQ/viewform" class="button">The Form</a></h5>
+        <h6>WHY IS THERE A PASSWORD</h6>
+        <h3>(old question) To prevent the little scoundrels from getting unreleased games and/or to prevent the teachers</h3>
+        <h6>WHAT CAN I DO WITH A DOMAIN</h6>
+        <h3>Get Music, Watch (unrestricted) videos (yes, that includes porn), and have your own games to play. Also, you can have a password so that no one else can get in.</h3>
+        <h6>HOW DO I GET A DOMAIN</h6>
+        <h3>Pay 1 dollar for games, 2 for music, and 3 for premium. 5 is for the deluxe (p)</h3>
     </center>
 
     <script>
-        const toggleButton = document.getElementById("toggleButton");
-        const hiddenText = document.getElementById("hiddenText");
-        const content = document.getElementById("content");
-        
-        toggleButton.addEventListener("click", function() {
-            if (toggleButton.textContent === "Show Text") {
-                toggleButton.textContent = "Hide Text";
-                hiddenText.style.display = "block";
-        
-                const textBox = document.createElement("textarea");
-                textBox.setAttribute("id", "textBox");
-                textBox.value = hiddenText.textContent;
-                content.appendChild(textBox);
-            } else {
-                toggleButton.textContent = "Show Text";
-                hiddenText.style.display = "none";
-                const textBox = document.getElementById("textBox");
-                if (textBox) {
-                    textBox.parentNode.removeChild(textBox);
-                }
-            }
-        });
         </script>
         
         </body>
