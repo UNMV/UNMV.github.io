@@ -11,12 +11,55 @@
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "build.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}});
     </script>
+    <style>
+      body {
+          background-color: #ffffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          font-family: "Poppins", cursive, sans-serif;
+          background-image: url("/shutterstock_407554567.png"); /* Replace with your background image path */
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+      }
+
+      h1, h4, a, h5, h6 {
+          color: white;
+          font-family: "Poppins", cursive, sans-serif;
+      }
+
+      .button {
+          display: inline-block;
+          padding: 10px 20px;
+          background-color: #c1c1c1;
+          color: white;
+          text-decoration: none;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+      .button:hover {
+          background-color: rgb(185, 182, 182);
+      }
+
+      #gameContainer {
+          width: 600px;
+          height: 600px;
+          position: relative;
+      }
+  </style>
   </head>
   <body>
+    <center>
+      <h1>Tunnel Rush</h1>
+      <h1>Placeholder for now.</h1>
     <div class="webgl-content">
       <div id="gameContainer" style="width: 800px; height: 600px; margin: auto;"></div>
 	  <div class="footer">
-	            
 	        </div>
     </div>
 	<script>
@@ -29,4 +72,5 @@
         }
   </script>
   </body>
+</center>
 </html>
