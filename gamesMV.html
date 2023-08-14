@@ -21,21 +21,44 @@
             color: rgb(201, 85, 101);
         }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #c1c1c1;
-            color: white;
-            text-decoration: none;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+        /* Update the styles for the button class */
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #c1c1c1;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .button:hover {
-            background-color: rgb(185, 182, 182);
-        }
+.button:hover {
+    background-color: rgb(185, 182, 182);
+}
+
+.button img {
+    max-width: 100px; /* Adjust the image width as needed */
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.button h4 {
+    margin: 0;
+    font-size: 18px; /* Adjust the font size as needed */
+    font-weight: bold;
+}
+
+.button p {
+    margin: 0;
+    font-size: 14px; /* Adjust the font size as needed */
+    font-weight: normal;
+    text-align: center;
+}
+
 
         .link-container {
             display: grid;
@@ -144,8 +167,12 @@
         
         <div class="link-container">
             <div class="link-item">
-                <h5><a href="/gameassets/MVCraft.html" class="button">MVCraft 1.5.2</a></h5>
-            </div>
+                <a href="/gameassets/MVCraft.html" class="button">
+                    <img src="/path-to-your-image.png" alt="MVCraft">
+                    <h4>MVCraft 1.5.2</h4>
+                    <p>Explore the world of MVCraft!</p>
+                </a>
+            </div>            
             <div class="link-item">
                 <h5><a href="/gameassets/MVBETA.html" class="button">MVCraft Beta 3</a></h5>
             </div>
