@@ -59,18 +59,17 @@
 }
 
 
-.link-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
+        .link-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             max-width: 800px;
             margin: 0 auto;
         }
+        
 
-        /* Set width for each link item */
         .link-item {
-            width: calc(25% - 20px);
+            flex: 0 0 calc(25% - 20px);
             margin: 10px;
         }
 
@@ -274,7 +273,7 @@
                                                                     <a href="/gameassets/BloonsTD4.html" class="button">
                                                                         <img src="/image-removebg-preview (56).png" alt="MVCraft">
                                                                         <h4>Bloons TD 4</h4>
-                                                                        <p>placeholder</p>
+                                                                        <p>NIINTENDOO</p>
                                                                     </a>
                                                                 </div>
             <div class="link-item">
