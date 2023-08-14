@@ -21,12 +21,8 @@
             color: rgb(201, 85, 101);
         }
 
-        /* Update the styles for the button class */
         .button {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align along the vertical axis */
-    align-items: flex-start; /* Align along the horizontal axis */
+    display: inline-block;
     padding: 10px 20px;
     background-color: #c1c1c1;
     color: white;
@@ -34,8 +30,10 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transform: skewX(-20deg); /* Skew the button text to the left */
     transition: background-color 0.3s ease;
 }
+
 
 
 .button:hover {
