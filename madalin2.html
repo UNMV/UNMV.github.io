@@ -1,23 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Your head content here -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madalin Stunt Cars 3</title>
+    <style>
+        .game-iframe-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-height: 75vh;
+        }
+        .game-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <div class="game-iframe-container" id="loadgame">
         <!-- Unity WebGL player will be loaded here -->
     </div>
     <button onclick="loadMainGame()">PLAY NOW</button>
-    <button onclick="open_fullscreen()">FULL SCREEN</button>
+    <button onclick="openFullscreen()">FULL SCREEN</button>
+    <script src="assets/js/jquery.js"></script>
+	<!-- popper -->
+	<script src="assets/js/popper.min.js"></script>
+	<!-- bootstrap -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- plugin js-->
+	<script src="assets/js/plugin.js"></script>
 
+	<!-- MpusemoverParallax JS-->
+	<script src="assets/js/TweenMax.js"></script>
+	<script src="assets/js/mousemoveparallax.js"></script>
+	<!-- main -->
+	<script src="assets/js/main.js"></script>
     <script>
         function loadMainGame(){
-            var html = `<iframe class="game-iframe iframeloader" id="game-area" src="https://webglmath.github.io/madalin-stunt-cars-3/" width="480" height="800" scrolling="none" frameborder="0" allowfullscreen="" tabindex="0"></iframe>`;
+            var html = `<iframe class="game-iframe" id="game-area" src="https://webglmath.github.io/madalin-stunt-cars-3/" width="480" height="800" frameborder="0" allowfullscreen=""></iframe>`;
             document.getElementById("loadgame").innerHTML = html;
             document.getElementById('loadgame').scrollIntoView();
         }
 
-        function open_fullscreen() {
+        function openFullscreen() {
             let game = document.getElementById("game-area");
             if (game.requestFullscreen) {
                 game.requestFullscreen();
