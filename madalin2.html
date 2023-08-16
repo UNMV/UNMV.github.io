@@ -1,14 +1,35 @@
-<script src="assets/js/jquery.js"></script>
-	<!-- popper -->
-	<script src="assets/js/popper.min.js"></script>
-	<!-- bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
-	<!-- plugin js-->
-	<script src="assets/js/plugin.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madalin Stunt Cars 3</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="game-iframe" frameborder="0" allowfullscreen></iframe>
+    <script>
+        const gameIframe = document.getElementById("game-iframe");
+        
+        function loadGame() {
+            const gameUrl = "https://webglmath.github.io/madalin-stunt-cars-3/";
+            gameIframe.src = gameUrl;
+        }
 
-	<!-- MpusemoverParallax JS-->
-	<script src="assets/js/TweenMax.js"></script>
-	<script src="assets/js/mousemoveparallax.js"></script>
-	<!-- main -->
-	<script src="assets/js/main.js"></script>
-	
+        loadGame(); // Automatically load the game when the page loads
+    </script>
+</body>
+</html>
