@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madalin Stunt Cars 3</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+    <!-- Your head content here -->
 </head>
 <body>
-    <iframe src="https://webglmath.github.io/madalin-stunt-cars-3/" frameborder="0" allowfullscreen></iframe>
+    <div class="game-iframe-container" id="loadgame">
+        <!-- Unity WebGL player will be loaded here -->
+    </div>
+    <button onclick="loadMainGame()">PLAY NOW</button>
+    <button onclick="open_fullscreen()">FULL SCREEN</button>
+
+    <script>
+        function loadMainGame(){
+            var html = `<iframe class="game-iframe iframeloader" id="game-area" src="https://webglmath.github.io/madalin-stunt-cars-3/" width="480" height="800" scrolling="none" frameborder="0" allowfullscreen="" tabindex="0"></iframe>`;
+            document.getElementById("loadgame").innerHTML = html;
+            document.getElementById('loadgame').scrollIntoView();
+        }
+
+        function open_fullscreen() {
+            let game = document.getElementById("game-area");
+            if (game.requestFullscreen) {
+                game.requestFullscreen();
+            } else if (game.mozRequestFullScreen) { /* Firefox */
+                game.mozRequestFullScreen();
+            } else if (game.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                game.webkitRequestFullscreen();
+            } else if (game.msRequestFullscreen) { /* IE/Edge */
+                game.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
