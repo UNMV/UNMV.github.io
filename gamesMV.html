@@ -134,12 +134,35 @@
     font-size: 50px;
     font-weight: normal;
 }
+.search-form {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
+        #search-input {
+            flex-grow: 1;
+            padding: 5px;
+        }
+
+        #search-button {
+            background-color: #c1c1c1;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #search-button:hover {
+            background-color: rgb(185, 182, 182);
+        }
 
 
     </style>
 </head>
 <body>
+    
     <div class="toolbar">
         <img class="logo" src="/image-removebg-preview (56).png" alt="Logo">
         <ul class="nav-links">
@@ -150,6 +173,13 @@
             <li><a class="nav-link" href="/changelog">Changelog</a></li>
             <li><a class="nav-link" href="/settings">Settings</a></li>
         </ul>
+    </div>
+    <div class="toolbar">
+        <!-- ... your navigation links ... -->
+        <form id="search-form" class="search-form">
+            <input type="text" id="search-input" placeholder="Search for links...">
+            <button type="button" id="search-button">Search</button>
+        </form>
     </div>
     
     <center>
@@ -163,7 +193,10 @@
         <h2>I MESSED UP 💀</h2>
         </div>
     </div>
-        
+    <form id="search-form" class="search-form">
+        <input type="text" id="search-input" placeholder="Search for links...">
+        <button type="button" id="search-button">Search</button>
+    </form>
         <div class="link-container">
             <div class="link-item">
                 <a href="/gameassets/MVCraft.html" class="button">
