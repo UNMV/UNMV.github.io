@@ -134,27 +134,23 @@
     font-size: 50px;
     font-weight: normal;
 }
-.search-form {
+.category-buttons {
             display: flex;
-            align-items: center;
-            margin-bottom: 20px;
+            justify-content: center;
+            margin: 20px 0;
         }
 
-        #search-input {
-            flex-grow: 1;
-            padding: 5px;
-        }
-
-        #search-button {
+        .category-button {
             background-color: #c1c1c1;
             color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin: 0 10px;
         }
 
-        #search-button:hover {
+        .category-button:hover {
             background-color: rgb(185, 182, 182);
         }
 
@@ -162,7 +158,6 @@
     </style>
 </head>
 <body>
-    
     <div class="toolbar">
         <img class="logo" src="/image-removebg-preview (56).png" alt="Logo">
         <ul class="nav-links">
@@ -174,14 +169,22 @@
             <li><a class="nav-link" href="/settings">Settings</a></li>
         </ul>
     </div>
-    <div class="toolbar">
-        <!-- ... your navigation links ... -->
-        <form id="search-form" class="search-form">
-            <input type="text" id="search-input" placeholder="Search for links...">
-            <button type="button" id="search-button">Search</button>
-        </form>
+
+    <div class="category-buttons">
+        <button class="category-button" data-category="all">All</button>
+        <button class="category-button" data-category="driving">Driving</button>
+        <button class="category-button" data-category="simulation">Simulation</button>
+        <button class="category-button" data-category="sports">Sports</button>
+        <button class="category-button" data-category="multiplayer">Multiplayer</button>
+        <button class="category-button" data-category="platformer">Platformer</button>
+        <button class="category-button" data-category="puzzle">Puzzle</button>
+        <button class="category-button" data-category="shooter">Shooter</button>
+        <button class="category-button" data-category="flash">Flash</button>
+        <button class="category-button" data-category="miscellaneous">Miscellaneous</button>
+        <button class="category-button" data-category="emulator">Emulator</button>
+        <button class="category-button" data-category="random">Random Game</button>
     </div>
-    
+
     <center>
         <div class="header-container">
         <div class="centered-text">
@@ -193,10 +196,7 @@
         <h2>I MESSED UP 💀</h2>
         </div>
     </div>
-    <form id="search-form" class="search-form">
-        <input type="text" id="search-input" placeholder="Search for links...">
-        <button type="button" id="search-button">Search</button>
-    </form>
+        
         <div class="link-container">
             <div class="link-item">
                 <a href="/gameassets/MVCraft.html" class="button">
@@ -398,6 +398,26 @@
     </center>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const categoryButtons = document.querySelectorAll(".category-button");
+            const linkItems = document.querySelectorAll(".link-item");
+            
+            categoryButtons.forEach(function(button) {
+                button.addEventListener("click", function() {
+                    const category = button.getAttribute("data-category");
+                    
+                    linkItems.forEach(function(linkItem) {
+                        const categories = linkItem.getAttribute("data-categories").split(" ");
+                        
+                        if (category === "all" || categories.includes(category)) {
+                            linkItem.style.display = "block";
+                        } else {
+                            linkItem.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
     </script>
 </body>
 </html>
