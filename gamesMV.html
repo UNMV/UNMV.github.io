@@ -137,21 +137,27 @@
 .category-buttons {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            margin: 40px 0; /* Adjust the top margin as needed */
         }
 
         .category-button {
             background-color: #c1c1c1;
             color: white;
             border: none;
-            padding: 5px 10px;
+            padding: 10px 20px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin: 0 10px;
+            border-radius: 20px; /* Rounded edges */
         }
 
-        .category-button:hover {
-            background-color: rgb(185, 182, 182);
+        #random-button {
+            background-color: #ff6f6f; /* Adjust color as needed */
+            font-size: 18px; /* Adjust font size as needed */
+            padding: 15px 30px; /* Adjust padding as needed */
+            border-radius: 30px; /* Bigger rounded edges */
+            position: relative;
+            z-index: 2; /* Brings the button to the front */
         }
 
     </style>
@@ -184,6 +190,7 @@
     </div>
     <div class="category-buttons">
         <button class="category-button" data-category="all">All</button>
+        <button class="category-button" data-category="all">All</button>
         <button class="category-button" data-category="driving">Driving</button>
         <button class="category-button" data-category="simulation">Simulation</button>
         <button class="category-button" data-category="sports">Sports</button>
@@ -194,8 +201,9 @@
         <button class="category-button" data-category="flash">Flash</button>
         <button class="category-button" data-category="miscellaneous">Miscellaneous</button>
         <button class="category-button" data-category="emulator">Emulator</button>
-        <button class="category-button" data-category="random">Random Game</button>
+        <button id="random-button" data-category="random">Random Game</button>
     </div>
+    
         <div class="link-container">
             <div class="link-item">
                 <a href="/gameassets/MVCraft.html" class="button">
