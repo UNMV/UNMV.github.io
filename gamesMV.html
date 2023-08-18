@@ -417,19 +417,25 @@
             const categoryButtons = document.querySelectorAll('.category-button');
             const linkItems = document.querySelectorAll(".link-item");
             
+            
             categoryButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+    button.addEventListener('click', () => {
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        const selectedCategory = button.dataset.category;
 
-                    linkItems.forEach(function(linkItem) {
-                        const categories = (linkItem.getAttribute("data-categories") || "").split(" ");
-                        
-                        if (category === "all" || categories.includes(category)) {
-                            linkItem.style.display = "block";
-                        } else {
-                            linkItem.style.display = "none";
-                        }
+        linkItems.forEach(function(linkItem) {
+            const categories = (linkItem.getAttribute("data-categories") || "").split(" ");
+            
+            if (selectedCategory === "all" || categories.includes(selectedCategory)) {
+                linkItem.style.display = "block";
+            } else {
+                linkItem.style.display = "none";
+            }
+
+                   
+                       
                     });
                 });
             });
