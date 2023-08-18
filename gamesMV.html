@@ -420,6 +420,7 @@
             categoryButtons.forEach(function(button) {
                 button.addEventListener("click", function() {
                     const category = button.getAttribute("data-category");
+                    button.classList.add('active');
                     
                     linkItems.forEach(function(linkItem) {
                         const categories = (linkItem.getAttribute("data-categories") || "").split(" ");
