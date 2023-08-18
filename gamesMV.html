@@ -137,6 +137,8 @@
 .category-buttons {
             display: flex;
             justify-content: center;
+            align-items: center; /* Center items vertically */
+            flex-wrap: wrap; /* Allow multiple rows */
             margin: 40px 0; /* Adjust the top margin as needed */
         }
 
@@ -152,7 +154,7 @@
         }
 
         #random-button {
-            background-color: #ff6f6f; /* Adjust color as needed */
+            background-color: #c1c1c1; /* Adjust color as needed */
             font-size: 18px; /* Adjust font size as needed */
             padding: 15px 30px; /* Adjust padding as needed */
             position: relative;
@@ -208,28 +210,28 @@
     </div>
 
         <div class="link-container">
-            <div class="link-item">
+            <div class="link-item" data-categories="simulation multiplayer all">
                 <a href="/gameassets/MVCraft.html" class="button">
                     <img src="/image-removebg-preview (56).png" alt="MVCraft">
                     <h4>MVCraft 1.5.2</h4>
                     <p>Explore the world of MVCraft!</p>
                 </a>
             </div>            
-                <div class="link-item">
+            <div class="link-item" data-categories="simulation all">
                     <a href="/gameassets/MVBETA.html" class="button">
                         <img src="/image-removebg-preview (56).png" alt="MVCraft">
                         <h4>MVCraft Beta</h4>
                         <p>Explore the world of MVCraft Singleplayer!</p>
                     </a>
                 </div>
-                    <div class="link-item">
+                <div class="link-item" data-categories="simulation multiplayer all">
                         <a href="/gameassets/MVCraft Multiplayer.html" class="button">
                             <img src="/image-removebg-preview (56).png" alt="MVCraft">
                             <h4>MVCraft Multiplayer</h4>
                             <p>Explore the world of MVCraft Servers!</p>
                         </a>
                     </div>
-                        <div class="link-item">
+                    <div class="link-item" data-categories="shooter multiplayer">
                             <a href="/gameassets/1v1.LOL/1v1lolhtml.html" class="button">
                                 <img src="/download.jpg" alt="MVCraft">
                                 <h4>1V1.LOL</h4>
