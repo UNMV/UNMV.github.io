@@ -414,14 +414,14 @@
 
     <script>
          document.addEventListener("DOMContentLoaded", function() {
-            const categoryButtons = document.querySelectorAll(".category-button");
+            const categoryButtons = document.querySelectorAll('.category-button');
             const linkItems = document.querySelectorAll(".link-item");
             
             categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
             categoryButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            
+
                     linkItems.forEach(function(linkItem) {
                         const categories = (linkItem.getAttribute("data-categories") || "").split(" ");
                         
