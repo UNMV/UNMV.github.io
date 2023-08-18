@@ -148,14 +148,12 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin: 0 10px;
-            border-radius: 20px; /* Rounded edges */
         }
 
         #random-button {
             background-color: #ff6f6f; /* Adjust color as needed */
             font-size: 18px; /* Adjust font size as needed */
             padding: 15px 30px; /* Adjust padding as needed */
-            border-radius: 30px; /* Bigger rounded edges */
             position: relative;
             z-index: 2; /* Brings the button to the front */
         }
@@ -192,7 +190,7 @@
     <div class="category-buttons">
     <button id="random-button" data-category="random">Random Game</button>
     </div>
-    
+
     <div class="category-buttons">
         <button class="category-button" data-category="all">All</button>
         <button class="category-button" data-category="driving">Driving</button>
@@ -408,7 +406,7 @@
     </center>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+         document.addEventListener("DOMContentLoaded", function() {
             const categoryButtons = document.querySelectorAll(".category-button");
             const linkItems = document.querySelectorAll(".link-item");
             
@@ -417,7 +415,7 @@
                     const category = button.getAttribute("data-category");
                     
                     linkItems.forEach(function(linkItem) {
-                        const categories = linkItem.getAttribute("data-categories").split(" ");
+                        const categories = (linkItem.getAttribute("data-categories") || "").split(" ");
                         
                         if (category === "all" || categories.includes(category)) {
                             linkItem.style.display = "block";
@@ -426,6 +424,15 @@
                         }
                     });
                 });
+            });
+
+            const randomButton = document.getElementById("random-button");
+            randomButton.addEventListener("click", function() {
+                const visibleLinkItems = Array.from(linkItems).filter(item => item.style.display !== "none");
+                if (visibleLinkItems.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * visibleLinkItems.length);
+                    window.location.href = visibleLinkItems[randomIndex].querySelector("a").getAttribute("href");
+                }
             });
         });
     </script>
