@@ -417,11 +417,11 @@
             const categoryButtons = document.querySelectorAll(".category-button");
             const linkItems = document.querySelectorAll(".link-item");
             
-            categoryButtons.forEach(function(button) {
-                button.addEventListener("click", function() {
-                    const category = button.getAttribute("data-category");
-                    button.classList.add('active');
-                    
+            categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
                     linkItems.forEach(function(linkItem) {
                         const categories = (linkItem.getAttribute("data-categories") || "").split(" ");
                         
