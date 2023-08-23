@@ -172,7 +172,7 @@
         <img class="logo" src="/image-removebg-preview (56).png" alt="Logo">
         <ul class="nav-links">
             <li><a class="nav-link" href="/">Home</a></li>
-            <li><a class="nav-link" href="/games">Games</a></li>
+            <li><a class="nav-link" href="/gamesMV.html">Games</a></li>
             <li><a class="nav-link" href="/domain.html">Domains</a></li>
             <li><a class="nav-link" href="/faq">FAQ</a></li>
             <li><a class="nav-link" href="/changelog">Changelog</a></li>
@@ -191,7 +191,7 @@
     </div>
         <div class="centered-text">
         <h2>🗿</h2>
-        <h2>NEXT IS MVUNBLOCKED4.GITHUB.IO</h2>
+        <h2 id="random-heading"></h2>
         </div>
     </div>
     
@@ -363,7 +363,7 @@
                                                             <a href="/gameassets/Dogeminer1/index.html" class="button">
                                                                 <img src="" alt="MVCraft">
                                                                 <h4>Doge Miner 1</h4>
-                                                                <p>Wade doesn't Fulfill Promises</p>       
+                                                                <p>To the Moon!</p>       
                                                             </a>
                                                         </div>
                                                         <div class="link-item" data-categories="idle">
@@ -451,6 +451,22 @@
                 }
             });
         });
+        var headings = [
+            "Welcome to hell...",
+            "¯\_(ツ)_/¯",
+            "( ͡° ͜ʖ ͡°)",
+            "Next is MVUnblocked4.github.io",
+            "Subscribe to Salta gatG"
+        ];
+
+        // Function to set a random heading
+        function setRandomHeading() {
+            var randomIndex = Math.floor(Math.random() * headings.length);
+            document.getElementById("random-heading").textContent = headings[randomIndex];
+        }
+
+        // Set a random heading on page load
+        window.onload = setRandomHeading;
     </script>
 </body>
 </html>
