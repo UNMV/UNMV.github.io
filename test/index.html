@@ -1,30 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WebSocket Chatroom</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #chatbox {
-            width: 400px;
-            height: 300px;
-            border: 1px solid #ccc;
-            overflow: auto;
-            padding: 10px;
-        }
-        #message {
-            width: 300px;
-            padding: 5px;
-        }
-        #sendButton {
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <title>Pusher Chatroom</title>
+    <!-- Add Pusher library -->
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 </head>
 <body>
     <div id="chatbox"></div>
@@ -36,20 +15,16 @@
         const messageInput = document.getElementById("message");
         const sendButton = document.getElementById("sendButton");
 
-        // Replace this URL with the actual WebSocket URL from WebSocketKing
-        const websocketUrl = 'wss://mvchats.websocketking.com';
-
-        const socket = new WebSocket(websocketUrl);
-
-        socket.addEventListener('open', (event) => {
-            console.log('WebSocket connection established:', event);
-            sendButton.disabled = false;
+        const pusher = new Pusher('b7030f8f3d1f72f81d17', {
+            cluster: 'us2',
+            encrypted: true
         });
 
-        socket.addEventListener('message', (event) => {
-            const message = event.data;
+        const channel = pusher.subscribe('chat-channel');
+
+        channel.bind('new-message', function(data) {
             const newMessage = document.createElement('p');
-            newMessage.textContent = message;
+            newMessage.textContent = data.message;
             chatbox.appendChild(newMessage);
             chatbox.scrollTop = chatbox.scrollHeight;
         });
@@ -57,7 +32,7 @@
         sendButton.addEventListener("click", () => {
             const message = messageInput.value;
             if (message.trim() !== "") {
-                socket.send(message);
+                channel.trigger('client-new-message', { message });
                 messageInput.value = "";
             }
         });
