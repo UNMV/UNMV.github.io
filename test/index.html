@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pusher Chatroom</title>
+    <title>hm</title>
     <!-- Add Pusher library -->
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 </head>
@@ -23,11 +23,12 @@
         const channel = pusher.subscribe('chat-channel');
 
         channel.bind('new-message', function(data) {
-            const newMessage = document.createElement('p');
-            newMessage.textContent = data.message;
-            chatbox.appendChild(newMessage);
-            chatbox.scrollTop = chatbox.scrollHeight;
-        });
+    console.log('Received data:', data); // Log the received data
+    const newMessage = document.createElement('p');
+    newMessage.textContent = data.message;
+    chatbox.appendChild(newMessage);
+    chatbox.scrollTop = chatbox.scrollHeight;
+});
 
         sendButton.addEventListener("click", () => {
             const message = messageInput.value;
