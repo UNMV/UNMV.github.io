@@ -164,6 +164,22 @@
         .category-button.active {
             background-color: #6e8bfa; /* Change this color to your desired selected color */
         }
+        body {
+    /* Apply custom scrollbar to the entire page */
+    scrollbar-width: thin;
+    scrollbar-color: #aaa #f0f0f0;
+}
+
+/* Style for the scrollbar track */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Style for the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 5px;
+}
 
     </style>
     <link rel="stylesheet" href="assets/css/slider.css" />
@@ -504,6 +520,15 @@
 
         // Set a random heading on page load
         window.onload = setRandomHeading;
+        
+    const contentContainer = document.body;
+
+    contentContainer.addEventListener('scroll', function() {
+        const scrollPercentage = (contentContainer.scrollTop / (contentContainer.scrollHeight - contentContainer.clientHeight)) * 100;
+        document.documentElement.style.setProperty('--scroll-percentage', `${scrollPercentage}%`);
+    });
+
+
     </script>
 </body>
 </html>
