@@ -217,10 +217,13 @@
     </div>
 <script>
     
-    document.getElementById("myBtn").addEventListener("click", function(){
-    var target = document.getElementById("output");
-    document.title = "All Resources - MackinVIA";
+    document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("myBtn").addEventListener("click", function() {
+        var target = document.getElementById("output");
+        document.title = "All Resources - MackinVIA";
+    });
 });
+
         // Function to set a random heading
         function setRandomHeading() {
             var randomIndex = Math.floor(Math.random() * headings.length);
