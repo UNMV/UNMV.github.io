@@ -209,52 +209,43 @@
         </h1>
     </div>
     <div class="link-item" data-categories="simulation all">
-        <input type="button" id = "button" value="Change"/>
+        <a href="#" class="button" id="microsoftButton">
+            <h4>Microsoft</h4>
+            <p>Click to change title and favicon to Microsoft</p>
+        </a>
+        <a href="#" class="button" id="mackinviaButton">
+            <h4>MackinVIA</h4>
+            <p>Click to change title and favicon to MackinVIA</p>
+        </a>
+
 <div id="output"></div>
             <h4></h4>
             <p></p>
         </a>
     </div>
-<script>
+
     
+    <script>
     document.addEventListener("DOMContentLoaded", function() {
-    var myButton = document.getElementById("myBtn");
-    var outputDiv = document.getElementById("output");
+            document.getElementById("microsoftButton").addEventListener("click", function() {
+                document.title = "Microsoft – Cloud, Computers, Apps & Gaming";
+                setFavicon("/image-removebg-preview (57).png"); // Replace with Microsoft favicon URL
+            });
 
-    // Retrieve title and favicon from localStorage on page load
-    var storedTitle = localStorage.getItem("customTitle");
-    var storedFavicon = localStorage.getItem("customFavicon");
+            document.getElementById("mackinviaButton").addEventListener("click", function() {
+                document.title = "MackinVIA Title";
+                setFavicon("/image-removebg-preview (10).png");
+            });
 
-    if (storedTitle) {
-        document.title = storedTitle;
-    }
+            // Add more button click event listeners as needed
 
-    if (storedFavicon) {
-        setFavicon(storedFavicon);
-    }
-
-    myButton.addEventListener("click", function() {
-        outputDiv.innerHTML = "Content Changed!";
-
-        // Change title and store in localStorage
-        var newTitle = "All Resources - MackinVIA";
-        document.title = newTitle;
-        localStorage.setItem("customTitle", newTitle);
-
-        // Change favicon and store in localStorage
-        var newFavicon = "/image-removebg-preview (57).png"; // Replace with your favicon URL
-        setFavicon(newFavicon);
-        localStorage.setItem("customFavicon", newFavicon);
-    });
-
-    function setFavicon(faviconUrl) {
-        var favicon = document.querySelector('link[rel="shortcut icon"]');
-        if (favicon) {
-            favicon.href = faviconUrl;
-        }
-    }
-});
-
+            function setFavicon(faviconUrl) {
+                var favicon = document.querySelector('link[rel="shortcut icon"]');
+                if (favicon) {
+                    favicon.href = faviconUrl;
+                }
+            }
+        });
 
         // Function to set a random heading
         function setRandomHeading() {
